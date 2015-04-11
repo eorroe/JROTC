@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>JROTC DATABASE</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="icon.png">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body class="flex-container">
+		<menu id="cadetMenu" type="popup">
+ 			<menuitem label="Edit">
+			<menu label="Move To">
+				<menuitem type="radio" label="ALPHA"></menuitem>
+				<menuitem type="radio" label="BRAVO"></menuitem>
+				<menuitem type="radio" label="CHARLIE"></menuitem>
+				<menuitem type="radio" label="DELTA"></menuitem>
+				<menuitem type="radio" label="ECHO"></menuitem>
+				<menuitem type="radio" label="FOXTROT"></menuitem>
+				<menuitem type="radio" label="GOLF"></menuitem>
+				<menuitem type="radio" label="HOTEL"></menuitem>
+				<menuitem type="radio" label="INACTIVE"></menuitem>
+			</menu>
+ 			<menuitem label="Delete">
+		</menu>
+		<controls id="controls" class="flex-container flex">
+			<input type="search" id="searchBox" class="searchBox center flex" placeholder="Search Here" spellcheck="false" autofocus>
+			<button id="newCadetButton" class="newCadetButton flex">New Cadet</button>
+			<button class="flex" id="ALL">ALL</button>
+			<button class="flex" id="ALPHA">ALPHA</button>
+			<button class="flex" id="BRAVO">BRAVO</button>
+			<button class="flex" id="CHARLIE">CHARLIE</button>
+			<button class="flex" id="DELTA">DELTA</button>
+			<button class="flex" id="ECHO">ECHO</button>
+			<button class="flex" id="FOXTROT">FOXTROT</button>
+			<button class="flex" id="GOLF">GOLF</button>
+			<button class="flex" id="HOTEL">HOTEL</button>
+			<button class="flex" id="INACTIVE">INACTIVE</button>
+		</controls>
+		<template id="cadetTemp">
+			<cadet class="center">
+				<img src="id.jpg" class="cadetImg">
+				<span class="company"></span>
+				<h4 class="name"></h4>
+				<span class="idNumber"></span>
+			</cadet>
+		</template>
+		<cadets id="cadets" class="flex-container"></cadets>
+		<dialog id="cadetDialog" class="entry">
+			<nav>
+				<ul class="center flex-container">
+					<li class="sec flex active">Personal</li>
+					<li class="sec flex">Uniform</li>
+					<li class="sec flex">Promotions</li>
+					<li class="sec flex">Awards</li>
+					<li class="sec flex">Events</li>
+					<li class="sec flex">Health</li>
+				</ul>
+			</nav>
+			<button class="closeButton">&#10007</button>
+			<section id="Personal" style="display: block">
+				<form class="flex-container">
+					<input type="text" class="flex" data-personal="lastName" placeholder="Last Name" autocomplete="off" required>
+					<input type="text" class="flex" data-personal="firstName" placeholder="First Name" autocomplete="off" required>
+					<input type="text" class="flex" data-personal="idNumber" placeholder="ID Number" maxlength="7" pattern="\d{7}" autocomplete="off" required>
+					<input type="number" class="flex" data-personal="birthYear" placeholder="Birth Year" autocomplete="off" required>
+					<select class="flex" data-personal="birthMonth" required>
+						<option value="" disabled selected>Birth Month</option>
+						<option value="Jan">Jan</option>
+						<option value="Feb">Feb</option>
+						<option value="Mar">Mar</option>
+						<option value="Apr">Apr</option>
+						<option value="May">May</option>
+						<option value="Jun">Jun</option>
+						<option value="Jul">Jul</option>
+						<option value="Aug">Aug</option>
+						<option value="Sep">Sep</option>
+						<option value="Oct">Oct</option>
+						<option value="Nov">Nov</option>
+						<option value="Dec">Dec</option>
+					</select>
+					<select class="flex" data-personal="gender" required>
+						<option value="" disabled selected>Gender</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+					<select class="flex" data-personal="race" required>
+						<option value="" disabled selected>Nationality</option>
+						<option value="Native American">Native American</option>
+						<option value="Hispanic (Other Than Black)">Hispanic</option>
+						<option value="Caucasian">CAUCASIAN</option>
+						<option value="Asian + Pacific Islander">Asian + Pacific Islander</option>
+						<option value="African American">African American</option>
+					</select>
+					<input type="text" class="flex" data-personal="address" placeholder="Address" autocomplete="off" required>
+					<select class="flex" data-personal="state" required>
+						<option value="" disabled selected>State</option>
+						<option value="AL">AL</option>
+						<option value="AK">AK</option>
+						<option value="AZ">AZ</option>
+						<option value="AR">AR</option>
+						<option value="CA">CA</option>
+						<option value="CO">CO</option>
+						<option value="CT">CT</option>
+						<option value="DE">DE</option>
+						<option value="FL">FL</option>
+						<option value="GA">GA</option>
+						<option value="HI">HI</option>
+						<option value="ID">ID</option>
+						<option value="IL">IL</option>
+						<option value="IN">IN</option>
+						<option value="IA">IA</option>
+						<option value="KS">KS</option>
+						<option value="KY">KY</option>
+						<option value="LA">LA</option>
+						<option value="ME">ME</option>
+						<option value="MD">MD</option>
+						<option value="MA">MA</option>
+						<option value="MI">MI</option>
+						<option value="MN">MN</option>
+						<option value="MS">MS</option>
+						<option value="MO">MO</option>
+						<option value="MT">MT</option>
+						<option value="NE">NE</option>
+						<option value="NV">NV</option>
+						<option value="NH">NH</option>
+						<option value="NJ">NJ</option>
+						<option value="NM">NM</option>
+						<option value="NY">NY</option>
+						<option value="NC">NC</option>
+						<option value="ND">ND</option>
+						<option value="OH">OH</option>
+						<option value="OK">OK</option>
+						<option value="OR">OR</option>
+						<option value="PA">PA</option>
+						<option value="RI">RI</option>
+						<option value="SC">SC</option>
+						<option value="SD">SD</option>
+						<option value="TN">TN</option>
+						<option value="TX">TX</option>
+						<option value="UT">UT</option>
+						<option value="VT">VT</option>
+						<option value="VA">VA</option>
+						<option value="WA">WA</option>
+						<option value="WV">WV</option>
+						<option value="WI">WI</option>
+						<option value="WY">WY</option>
+					</select>
+					<input type="text"   class="flex" data-personal="city"       placeholder="City"        autocomplete="off" required>
+					<input type="number" class="flex" data-personal="zipCode"    placeholder="Zip Code"    autocomplete="off" min="11111" max="99999" required>
+					<input type="email"  class="flex" data-personal="email"      placeholder="Email"       autocomplete="off">
+					<input type="text"   class="flex" data-personal="schoolYear" placeholder="School Year" autocomplete="off" pattern="^\d{4}-\d{4}$" required>
+					<input type="date"   class="flex" data-personal="enrolled"   placeholder="Enrolled"    autocomplete="off" min="1990-01-01" required>
+					<input type="date"   class="flex" data-personal="EGD"        placeholder="Grad Date"   autocomplete="off" min="2014-01-01" required>
+					<select id="company" class="flex" data-personal="company" required>
+						<option value="" disabled selected>Company</option>
+						<option value="ALPHA">Alpha</option>
+						<option value="BRAVO">Bravo</option>
+						<option value="CHARLIE">Charlie</option>
+						<option value="DELTA">Delta</option>
+						<option value="ECHO">Echo</option>
+						<option value="FOXTROT">Foxtrot</option>
+						<option value="GOLF">Golf</option>
+						<option value="HOTEL">Hotel</option>
+					</select>
+					<select class="flex" data-personal="grade" required>
+						<option value="" disabled selected>Grade</option>
+						<option value="9">9th Grade</option>
+						<option value="10">10th Grade</option>
+						<option value="11">11th Grade</option>
+						<option value="12">12th Grade</option>
+					</select>
+					<select class="flex" data-personal="letLevel" required>
+						<option value="" disabled selected>Let Level</option>
+						<option value="1">Let Level 1</option>
+						<option value="2">Let Level 2</option>
+						<option value="3">Let Level 3</option>
+						<option value="4">Let Level 4</option>
+					</select>
+					<input type="tel" class="flex" data-personal="cellNum" maxlength="10" pattern="\d{10}" placeholder="Cell Phone Number" autocomplete="off" required>
+					<button role="submit" class="addButton"></button>
+				</form>
+			</section>
+			<section id="Uniform">
+				<form class="flex-container">
+					<select class="flex" data-uniform="hat">
+						<option value="">Hat Size</option>
+					</select>
+					<select class="flex" data-uniform="shirt">
+						<option value="">Shirt Size</option>
+					</select>
+					<select class="flex" data-uniform="tShirt">
+						<option value="">T-Shirt Size</option>
+						<option value="SMALL">Small T-Shirt</option>
+						<option value="MEDIUM">Medium T-Shirt</option>
+						<option value="LARGE">Large T-Shirt</option>
+					</select>
+					<select class="flex" data-uniform="star">
+						<option value="">Star</option>
+						<option value="BLUE">Blue Star</option>
+						<option value="GOLD">Gold Star</option>
+					</select>
+					<select class="flex" data-uniform="belt">
+						<option value="">Belt</option>
+					</select>
+					<select class="flex" data-uniform="pants">
+						<option value="">Pants Size</option>
+					</select>
+					<select class="flex" data-uniform="socks">
+						<option value="">Socks Size</option>
+						<option value="SMALL">Small Socks</option>
+						<option value="MEDIUM">Medium Socks</option>
+						<option value="LARGE">Large Socks</option>
+					</select>
+					<select class="flex" data-uniform="shoes">
+						<option value="">Shoes Size</option>
+					</select>
+				</form>
+			</section>
+			<section id="Promotions">
+				<form class="flex-container"></form>
+			</section>
+			<section id="Awards">
+				<form class="flex-container"></form>
+			</section>
+			<section id="Events">
+				<form class="flex-container"></form>
+			</section>
+			<section id="Health">
+				<form class="flex-container"></form>
+			</section>
+		</dialog>
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="entry.js"></script>
+	</body>
+</html>

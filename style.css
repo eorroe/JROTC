@@ -1,0 +1,173 @@
+html, body {
+	background: #E5E5E5;
+	height: 100%;
+	margin: 0;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.searchBox {
+	background: #DDD;
+	color: #000088;
+	text-transform: capitalize;
+}
+.searchBox, button {
+	font-size: 25px;
+	text-decoration: none;
+}
+button.flex, .company {
+	color: #AAA;
+}
+button.newCadetButton {
+	background: dodgerblue;
+	color: white;
+}
+button.flex:target {
+	background: #00CC30;
+	color: white;
+}
+.entry, input, select, button {
+	border: none;
+	outline: none;
+}
+button:hover {
+	opacity: 0.8;
+}
+.center {
+	text-align: center;
+}
+.flex-container {
+	display: flex;
+}
+.flex {
+	flex: 1;
+}
+controls  {
+    flex-flow: column wrap;
+    min-width: 200px;
+    height: 100%;
+}
+editbar {
+	position: relative;
+	width: 100%;
+	background: dodgerblue;
+	display: block;
+	transform: translateX(-100%);
+}
+cadets, .entry form {
+	flex-flow: row wrap;
+
+	justify-content: space-between;
+}
+cadets {
+	height: 100%;
+	overflow: auto;
+	flex: 5;
+}
+cadet, .sec, button {
+	cursor: pointer;
+}
+cadet {
+	position: relative;
+	flex: 1 50%;
+	max-width: 200px;
+	height: -webkit-min-content;
+	height: min-content;
+	margin: 30px;
+	background-color: #DDD;
+	transition: all 0.1s ease-in-out;
+}
+cadet:hover {
+	box-shadow: 0 8px 8px #666;
+}
+cadet:active {
+	transform: scale(0.9);
+}
+cadet.selected {
+	box-shadow: 0 0 40px maroon;
+}
+.cadetImg {
+	width: 100px;
+	float: left;
+}
+.name {
+	margin: 15px 0;
+	color: dodgerblue;
+}
+.entry {
+	position: fixed;
+	width: 80%;
+	height: 80%;
+	padding: 10px;
+	will-change: transform;
+	transition: transform 0.5s ease-in-out;
+}
+.entry::backdrop {
+	background: rgba(0, 0, 0, 0.8);
+}
+.entry form {
+	position: relative;
+	top: 80px;
+}
+form .flex, .addButton {
+	margin: 20px 0;
+	min-width: 300px;
+	max-width: 300px;
+	font-size: 20px;
+	border-bottom: 2px solid #C00;
+	text-transform: capitalize;
+	background: transparent;
+	transition: all 0.5s ease-in-out;
+}
+form .flex:focus {
+	border-bottom: 2px solid blue;
+	border-width: medium;
+}
+form .flex:valid {
+	border-bottom: 2px solid green;
+}
+input[type=date]:after {
+	color: darkgray;
+	content: attr(placeholder);
+}
+.addButton {
+	background: #00CC00;
+	border-bottom: none;
+	border-radius: 5px;
+	line-height: 30px;
+}
+.closeButton {
+	position: absolute;
+	top: -10px;
+	right: 0;
+	width: 25px;
+	background: transparent;
+}
+nav ul  {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 30px;
+	background: cornflowerblue;
+	color: white;
+}
+.sec:hover {
+	background: deepskyblue;
+}
+.active, .sec:active {
+	background: steelblue;
+}
+section, option:first-child {
+	display: none;
+	color: #808080;
+}
+::selection {
+	background: red;
+	color: white;
+}
+form input:indeterminate {
+	background: red;
+}
